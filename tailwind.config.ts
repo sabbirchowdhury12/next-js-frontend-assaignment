@@ -11,12 +11,18 @@ const config: Config = {
     extend: {
       boxShadow: {
         custom: "0px 4px 12px 0px #00000014",
-        custom2: "0px 0px 4px 0px #00000012", // for the first shadow
-        custom3: "0px 4px 6px -1px #0000001A", // for the second shadow
+        custom2: "0px 0px 4px 0px #00000012",
+        custom3: "0px 4px 6px -1px #0000001A",
+        custom4: "5px 5px 10px 0px #FFFFFF",
+        custom5: "0px 1px 2px 0px #0000000D",
+        custom6: "0px 10px 22px 0px #F382491A",
       },
       colors: {
         menuTextColor: "#51564E",
         primaryColor: "#A6DC94",
+        primaryDefault: "#4CAF50",
+
+        secondaryColor: "#061621",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

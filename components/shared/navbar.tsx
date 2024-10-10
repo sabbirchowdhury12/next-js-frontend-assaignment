@@ -14,19 +14,21 @@ export default function NimbusHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="shadow-custom border border-b-white">
-      <div className="container  max-w-[1432px] mx-auto px-6 md:px-10">
+    <header className="shadow-[0px_4px_12px_0px_rgba(0,0,0,0.08)] border border-b-white">
+      <div className="  max-w-[1432px]  mx-auto px-6 md:px-10">
         <div className="flex items-center justify-between py-6">
-          <div className="flex gap-[52px] items-center">
+          <div className="flex md:gap-10 lg:gap-[52px] items-center">
             <div className="flex items-center">
-              <span className="text-2xl font-bold mr-1">Nimbus</span>
-              <span className="text-2xl font-bold text-green-500">=</span>
+              <span className="text-2xl font-bold mr-1 text-[#141513]">
+                Nimbus
+              </span>
+              <span className="text-2xl font-bold text-[#3A7326]">=</span>
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
+            <nav className="hidden md:flex items-center space-x-4 lg:space-x-10">
               <DropdownMenu>
-                <DropdownMenuTrigger className="flex items-center text-menuTextColor text-[16px] font-medium  hover:text-gray-900">
+                <DropdownMenuTrigger className="flex items-center text-menuTextColor text-[16px] font-medium  hover:text-gray-900 ">
                   Widgets <ChevronDown className="ml-1 h-4 w-4" />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>

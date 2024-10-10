@@ -2,14 +2,16 @@ import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
 import Image from "next/image";
 import galleryImage from "../../../assets/Screenshot_10.png";
+import card1 from "../../../assets/card.png";
+import card2 from "../../../assets/card2.png";
 
 export default function HeroSection() {
   return (
     <section>
-      <div className="pl-9 pr-5 md:px-[100px] ">
+      <div className="pl-9 pr-5 md:px-[100px] md:py-[75px]">
         <div className="container max-w-[1306px] mx-auto ">
-          <div className="flex flex-col gap lg:flex-row items-center justify-between gap-20 mt-10 mb-5 md:py-[75px]">
-            <div className="max-w-[745px]">
+          <div className="flex flex-col gap lg:flex-row items-center justify-between gap-20  mb-5 mt-[37px] md:mt-0">
+            <div className="md:max-w-[745px]">
               <div className="flex items-center gap-1 mb-2">
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
@@ -17,7 +19,7 @@ export default function HeroSection() {
                       key={i}
                       className="h-3 w-3 md:h-6 md:w-6 ml-[2.5px] flex justify-center items-center"
                     >
-                      <Star className="h-2 w-2 md:h-[18px] md:w-[18px] text-yellow-400 fill-current" />
+                      <Star className="h-[9px] w-[9px] md:h-[18px] md:w-[18px] text-[#F9D006] fill-current" />
                     </div>
                   ))}
                 </div>
@@ -65,7 +67,7 @@ export default function HeroSection() {
                 <span className="flex items-center leading-9">
                   <svg
                     className="w-4 h-4 mr-2 text-[#8193B9]"
-                    fill="currentColor"
+                    fill="#8193B9"
                     viewBox="0 0 20 20"
                   >
                     <path
@@ -79,7 +81,7 @@ export default function HeroSection() {
                 <span className="flex items-center leading-9">
                   <svg
                     className="w-4 h-4 mr-2 text-[#8193B9]"
-                    fill="currentColor"
+                    fill="#8193B9"
                     viewBox="0 0 20 20"
                   >
                     <path
@@ -92,33 +94,44 @@ export default function HeroSection() {
                 </span>
               </div>
             </div>
-            <div className="w-[400px] hidden md:block">
-              <Image src={galleryImage} alt="" className="w-full h-full" />
-              {/* <div className="grid grid-cols-3 gap-4">
-            {[...Array(7)].map((_, i) => (
-              <div
-                key={i}
-                className={`rounded-lg overflow-hidden ${
-                  i === 0 ? "col-span-2 row-span-2" : ""
-                }`}
-              >
-                <img
-                  src={`/placeholder.svg?height=${
-                    i === 0 ? "300" : "150"
-                  }&width=${i === 0 ? "300" : "150"}`}
-                  alt={`Product screenshot ${i + 1}`}
-                  className="w-full h-full object-cover"
-                />
+            <div className="max-w-[405px] hidden lg:block">
+              <div className="grid grid-cols-3 gap-4">
+                {[
+                  "", // Empty placeholder for the first cell
+                  card1,
+                  card2,
+                  card1,
+                  card2,
+                  card1,
+                  card2,
+                  card1,
+                  card2,
+                ].map((img, i) => (
+                  <div
+                    key={i}
+                    className={`${
+                      img === ""
+                        ? ""
+                        : "object-cover lg:h-[120px] lg:w-[120px] rounded-3xl"
+                    }`}
+                  >
+                    {img && (
+                      <Image
+                        src={img}
+                        alt={`Product screenshot ${i + 1}`}
+                        className="object-cover lg:h-[120px] lg:w-[120px] rounded-3xl"
+                      />
+                    )}
+                  </div>
+                ))}
               </div>
-            ))}
-          </div> */}
             </div>
           </div>
         </div>
       </div>
       <div className="pl-9 pr-5 md:px-[100px] bg-[#ECF0F180] md:bg-transparent">
         <div className="container max-w-[1306px] mx-auto  ">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 py-[22px]  md:py-0 ">
+          <div className="grid grid-cols-1  sm:grid-cols-4  gap-8 py-[22px]  md:py-0 ">
             {[
               { value: "99.9%", label: "websites support" },
               { value: "1,000+", label: "hours of development invested" },

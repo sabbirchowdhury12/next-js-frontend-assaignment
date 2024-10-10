@@ -19,14 +19,18 @@ import {
   ArrowRight,
 } from "lucide-react";
 
+import card1 from "../../../assets/card.png";
+import card2 from "../../../assets/card3.png";
+import Image from "next/image";
+
 export default function CategorySection() {
   const [activeWidget, setActiveWidget] = useState("pop");
 
   console.log(activeWidget);
   return (
-    <section className="mt-8  px-8 md:px-32">
-      <div className="container max-w-[1227px] mx-auto py-8 md:py-[52px] ">
-        <div className="text-center max-w-[1211px]  mx-auto pb-6 md:pb-[75px]">
+    <section className="mt-8  px-8 md:px-32 ">
+      <div className="container max-w-[1227px] mx-auto pt-8 md:py-[52px] ">
+        <div className="text-center max-w-[1211px]  mx-auto pb-6 md:pb-[75px] ">
           <p className="text-xl  md:text-[26px] leading-8 tracking-[0.5px]">
             We make it simple to not only create stunning widgets but also to{" "}
             <span className="text-[#FF3B30] font-semibold">
@@ -58,7 +62,7 @@ export default function CategorySection() {
                   variant="outline"
                   className={` flex-1 flex justify-around w-full  text-[#0F172A] font-medium text-[20px] leading-6 tracking-[0.5px] ${
                     activeWidget === widget.label.toLocaleLowerCase()
-                      ? " shadow-custom2 border-none"
+                      ? " drop-shadow-md	 border-none"
                       : undefined
                   } `}
                   size={"lg"}
@@ -84,7 +88,7 @@ export default function CategorySection() {
               <Button
                 key={index}
                 variant="secondary"
-                className={`group  bg-transparent flex-1 flex justify-start gap-4 w-full  text-[#0F172A] mb-4  font-medium text-[20px] leading-6 tracking-[0.5px] transition-all duration-300 ${
+                className={`group hover:bg-white  bg-transparent flex-1 flex justify-start gap-4 w-full  text-[#0F172A] mb-4  font-medium text-[20px] leading-6 tracking-[0.5px] transition-all duration-300 ${
                   activeWidget === widget.label.toLocaleLowerCase()
                     ? " shadow-custom2 border-none bg-white"
                     : undefined
@@ -107,8 +111,18 @@ export default function CategorySection() {
             ))}
           </div>
 
-          <div className="w-full md:w-3/4">
-            <div className="bg-yellow-400 rounded-t-lg p-4 text-center font-semibold">
+          <div className="overflow-hidden sm:overflow-visible w-full md:w-3/4 relative sm:mx-20 md:mx-0">
+            <Image
+              src={card2}
+              alt=""
+              className="w-full max-w-[259px]   max-h-[200px] md:max-w-[759px] shadow-custom3   md:max-h-[451px]"
+            />
+            <Image
+              src={card1}
+              alt=""
+              className="max-w-[220px]   max-h-[174px] md:max-w-[759px] md:max-h-[451px] w-full absolute top-[50px]  md:top-[105px] left-[94px] shadow-custom3 overflow-hidden"
+            />
+            {/* <div className="bg-yellow-400 rounded-t-lg p-4 text-center font-semibold">
               LANDING PAGE TEMPLATE
             </div>
             <Card className="mt-4">
@@ -148,22 +162,10 @@ export default function CategorySection() {
                   ))}
                 </div>
               </CardContent>
-            </Card>
+            </Card> */}
           </div>
         </div>
       </div>
     </section>
   );
-}
-
-{
-  /* <Button
-key={index}
-size={"lg"}
-variant="ghost"
-className="w-full justify-start text-[#0F172A] font-medium text-[20px] leading-6 tracking-[0.5px]"
->
-{item.icon}
-<span className="ml-2">{item.label}</span>
-</Button> */
 }
